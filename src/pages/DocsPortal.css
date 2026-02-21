@@ -1,0 +1,66 @@
+.source-of-truth {
+    margin-bottom: var(--space-8);
+    border-left: 3px solid var(--color-secondary);
+}
+
+.source-of-truth h4 {
+    color: var(--color-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.source-of-truth p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.doc-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+}
+
+.doc-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.doc-icon {
+    font-size: var(--text-xl);
+    flex-shrink: 0;
+}
+
+.doc-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    flex: 1;
+}
+
+.doc-name {
+    font-weight: 600;
+    color: var(--color-text-heading);
+    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+}
+
+.doc-role {
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+}
+
+.doc-arrow {
+    color: var(--color-accent);
+    font-size: var(--text-lg);
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+}
+
+.doc-item:hover .doc-arrow {
+    transform: translateX(4px);
+}

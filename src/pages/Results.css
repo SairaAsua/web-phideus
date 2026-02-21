@@ -1,0 +1,84 @@
+.table-wrapper {
+    overflow-x: auto;
+    margin: var(--space-4) 0;
+}
+
+.baseline-row td {
+    opacity: 0.6;
+}
+
+.result-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--space-2);
+}
+
+.observations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+}
+
+.obs h4 {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-base);
+}
+
+.obs p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.ranking-bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.rank-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.rb-name {
+    min-width: 90px;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.rb-track {
+    flex: 1;
+    height: 24px;
+    background: var(--color-bg-card);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.rb-fill {
+    height: 100%;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(90deg, var(--color-accent), rgba(20, 184, 166, 0.5));
+    transition: width 0.8s ease;
+}
+
+.rank-bar.top .rb-fill {
+    background: linear-gradient(90deg, var(--color-accent), #22c55e);
+}
+
+.rank-bar.top .rb-name {
+    color: var(--color-accent);
+}
+
+.rb-value {
+    min-width: 60px;
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}

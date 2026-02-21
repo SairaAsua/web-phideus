@@ -1,0 +1,120 @@
+.param-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin: var(--space-4) 0;
+}
+
+.param-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.param-label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.param-value {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+}
+
+.param-desc {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.viz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-4);
+}
+
+.viz-card {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.viz-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.viz-icon {
+    font-size: var(--text-2xl);
+}
+
+.viz-arch {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+}
+
+.viz-name {
+    font-size: var(--text-base);
+    color: var(--color-text-heading);
+    margin: 0;
+}
+
+.viz-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    flex: 1;
+}
+
+.viz-link {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.descriptors {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.desc-item h4 {
+    color: var(--color-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.desc-item p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-1);
+}
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-3);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
