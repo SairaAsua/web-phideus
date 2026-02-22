@@ -63,9 +63,9 @@ MIDI  (event sequence)      → 4× Transformer (d=512)                         
                 <h2 className="section-title">Ratio Descriptors (Gate 4.3)</h2>
                 <div className="descriptors">
                     <div className="desc-item card">
-                        <h4>D4 — MIDI Intervals</h4>
-                        <p><strong>4 dimensions per token:</strong> pitch diff, IOI, velocity diff, duration ratio.</p>
-                        <p>Computed from MIDI events. Injected post-embedding, pre-Transformer.</p>
+                        <h4>D4 — MIDI Ratio Descriptor</h4>
+                        <p><strong>4 dimensions per token:</strong> Pitch intervals (f₁/f₂), IOI ratios, Velocity deltas, and Duration ratios.</p>
+                        <p>Computed from MIDI events. Injected post-embedding, pre-Transformer. This descriptor encodes the relative harmonic structure instead of absolute properties.</p>
                     </div>
                     <div className="desc-item card">
                         <h4>A4 — Audio Log-Frequency Deltas</h4>
@@ -78,21 +78,39 @@ MIDI  (event sequence)      → 4× Transformer (d=512)                         
                         <p>Directly tests the Phideus hypothesis: does proximity to JI ratios (3:2, 5:4, etc.) carry cross-modal signal?</p>
                     </div>
                 </div>
-                <h3>Injection Mechanisms Tested</h3>
                 <div className="table-wrapper">
                     <table className="data-table">
                         <thead>
                             <tr><th>Mechanism</th><th>Description</th><th>Best Result</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>Concat</strong></td><td>Linear projection after concatenation</td><td>d4a4 = 69.8%</td></tr>
-                            <tr><td><strong>Cross-attention</strong></td><td>Q=features, K/V=descriptor</td><td>A4x = 62.6%</td></tr>
-                            <tr className="highlight"><td><strong>Reverse cross-att</strong></td><td>Q=descriptor, K/V=features — 12.8× less compute</td><td>A4r = 68.6%</td></tr>
-                            <tr><td><strong>Dual same-mod</strong></td><td>Both encoders get their own concat descriptors</td><td>d4a4 = 69.8%</td></tr>
-                            <tr><td><strong>Dual cross-modal</strong></td><td>Cross-modal descriptor injection</td><td>d4a4cm = 52.4% (destructive)</td></tr>
+                            <tr><td><strong>Concat</strong></td><td>Linear projection after concatenation of features and descriptors.</td><td>d4a4 = 69.8%</td></tr>
+                            <tr><td><strong>Cross-attention</strong></td><td>Q=features, K/V=descriptor. Features attend to ratios.</td><td>A4x = 62.6%</td></tr>
+                            <tr className="highlight"><td><strong>Reverse cross-att</strong></td><td>Q=descriptor, K/V=features. Ratios attend to features — 12.8× less compute.</td><td>A4r = 68.6%</td></tr>
+                            <tr><td><strong>Dual same-mod</strong></td><td>Both encoders get their own modality-specific concat descriptors.</td><td>d4a4 = 69.8%</td></tr>
+                            <tr><td><strong>Dual cross-modal</strong></td><td>Descriptors from one modality injected into the other (destructive).</td><td>d4a4cm = 52.4%</td></tr>
                         </tbody>
                     </table>
                 </div>
+            </section>
+
+            <section className="section">
+                <h2 className="section-title">Anti-Phantom-Variable Protocol</h2>
+                <div className="card protocol-card">
+                    <p>
+                        To ensure rigorous causal attribution of performance improvements, Phideus follows the
+                        <strong> Anti-Phantom-Variable Protocol</strong>:
+                    </p>
+                    <blockquote>
+                        "Isolate a single architectural or data change per experiment. If multiple variables change simultaneously,
+                        the resulting improvement is 'phantom' — its true source cannot be scientifically identified."
+                    </blockquote>
+                    <p>
+                        Every GO decision must be backed by an ablation study or a controlled comparison where only the
+                        target mechanism varies.
+                    </p>
+                </div>
+                <EvidenceCallout source="Documents/01_FRENTES_ACTIVOS/BIAS_CONTROL/ROADMAP_BIAS_CONTROL.md" />
             </section>
 
             <section className="section">

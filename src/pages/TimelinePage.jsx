@@ -53,6 +53,24 @@ export default function TimelinePage() {
                     </div>
                 ))}
             </div>
+
+            <section className="section glossary-section">
+                <h2 className="section-title">Glossary of Terms</h2>
+                <div className="glossary-grid">
+                    <div className="glossary-item card">
+                        <strong>DANN:</strong> Domain Adversarial Neural Network. Used in Gate 3 to test if domain-invariant embeddings would improve retrieval.
+                    </div>
+                    <div className="glossary-item card">
+                        <strong>UOEMD:</strong> Universal Objective Evaluation of Modal Descriptors. Phase 1 attempt at cross-domain alignment.
+                    </div>
+                    <div className="glossary-item card">
+                        <strong>VICReg:</strong> Variance-Invariance-Covariance Regularization. Current contrastive loss function used in BIAS_CONTROL.
+                    </div>
+                    <div className="glossary-item card">
+                        <strong>Gate:</strong> A systematic decision point in the research roadmap with explicit GO/NO-GO criteria.
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }

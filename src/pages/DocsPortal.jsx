@@ -21,6 +21,7 @@ const docMap = {
             { name: 'INFORME_DEC005_DIAGNOSTICO.md', role: 'Gate 6 retroanalysis and root cause diagnosis', path: 'Documents/01_FRENTES_ACTIVOS/BIAS_CONTROL/04_DIAGNOSTICO_GATE_6_Y_GATE_4_2/INFORME_DEC005_DIAGNOSTICO_COMPLETO.md' },
             { name: 'PLAN_EJECUCION_POST_DEC005.md', role: 'Bloque A recovery execution plan', path: 'Documents/01_FRENTES_ACTIVOS/BIAS_CONTROL/05_PLAN_POST_DIAGNOSTICO_BLOQUE_A/PLAN_EJECUCION_POST_DEC005_v1.1.md' },
             { name: 'plan_gate_4.2.md', role: 'Gate 4.2 ratio-centric pre-network plan', path: 'Documents/01_FRENTES_ACTIVOS/BIAS_CONTROL/06_GATE_4_2_RATIO_CENTRICO/plan_gate_4.2.md' },
+            { name: 'Gate 4.3 README', role: 'Ratio Re-Centric champion and scratch runs', path: 'Documents/01_FRENTES_ACTIVOS/BIAS_CONTROL/07_GATE_4_3_RATIO_RE_CENTRICO/README.md' },
             { name: 'Gate 4.4 README', role: 'Third Tower + FiLM + MoE architectures', path: 'Documents/01_FRENTES_ACTIVOS/BIAS_CONTROL/08_GATE_4_4_ARQUITECTURAS_MAYORES/README.md' },
         ]
     },

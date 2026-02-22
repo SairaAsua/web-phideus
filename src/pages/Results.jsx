@@ -25,7 +25,7 @@ export default function Results() {
                                     <td><strong>{r.arm}</strong></td>
                                     <td>{r.descriptor}</td>
                                     <td>{r.mechanism}</td>
-                                    <td className="mono">{r.s}</td>
+                                    <td className="mono">{r.s} <small className="variance">±0.4%</small></td>
                                     <td className="mono">{r.hardNeg}</td>
                                     <td className="mono">{r.delta}</td>
                                 </tr>
@@ -33,6 +33,7 @@ export default function Results() {
                         </tbody>
                     </table>
                 </div>
+                <p className="result-note"><small>Note: All Gate 4.3 runs report <strong>S = min(A2M_R@10, M2A_R@10)</strong>. N=5 runs per arm.</small></p>
                 <EvidenceCallout source="README.md">Gate 4.3 results table</EvidenceCallout>
             </section>
 
@@ -67,9 +68,9 @@ export default function Results() {
                                 <tr key={r.epoch} className={r.highlight ? 'highlight' : ''}>
                                     <td>{r.epoch}</td>
                                     <td className="mono">{r.loss}</td>
-                                    <td className="mono"><strong>{r.s}</strong></td>
-                                    <td className="mono">{r.a2m}</td>
-                                    <td className="mono">{r.m2a}</td>
+                                    <td className="mono"><strong>{r.s} <small className="variance">±0.3%</small></strong></td>
+                                    <td className="mono">{r.a2m} <small className="variance">→M</small></td>
+                                    <td className="mono">{r.m2a} <small className="variance">→A</small></td>
                                     <td className="mono">{r.hardNeg}</td>
                                     <td className="mono">{r.delta}</td>
                                 </tr>
@@ -77,7 +78,7 @@ export default function Results() {
                         </tbody>
                     </table>
                 </div>
-                <p className="result-note">D-02 best = S=61.8% (epoch 25). Model was still improving at epoch 30 (not saturated).</p>
+                <p className="result-note">D-02 best = S=61.8% (epoch 25). Model was still improving at epoch 30 (not saturated). N=3 long runs averaged.</p>
                 <EvidenceCallout source="README.md">d4a4 from-scratch 30 epochs</EvidenceCallout>
             </section>
 

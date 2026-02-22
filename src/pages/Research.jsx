@@ -30,6 +30,24 @@ export default function Research() {
             </section>
 
             <section className="section">
+                <h2 className="section-title">Methodology & Metrics</h2>
+                <div className="card method-card">
+                    <p>
+                        We use <strong>Self-Supervised Contrastive Learning</strong> (specifically <strong>VICReg</strong>: Variance-Invariance-Covariance Regularization)
+                        to align the embedding spaces of different modalities.
+                    </p>
+                    <ul>
+                        <li><strong>Dataset:</strong> MAESTRO v3.0.0 (Temporally aligned Audio+MIDI pairs).</li>
+                        <li><strong>Primary Metric:</strong> Recall at 10 (R@10) — probability that the correct match is in the top 10 retrieved candidates.</li>
+                        <li><strong>Evaluation Protocol:</strong> Structured Pool (256 candidates, 500 queries, seed=42).</li>
+                    </ul>
+                </div>
+                <EvidenceCallout source="Documents/04_TRANSVERSAL/TEORIA_Y_FUNDAMENTOS/PHIDEUS_MASTER_BRIEFING.md">
+                    Section 2: Methodology
+                </EvidenceCallout>
+            </section>
+
+            <section className="section">
                 <h2 className="section-title">Operative Hypotheses</h2>
                 <div className="hypothesis-cards">
                     {hypotheses.map(h => (
@@ -40,7 +58,7 @@ export default function Research() {
                                 <StatusBadge status={h.status} />
                             </div>
                             <p className="hyp-statement">{h.statement}</p>
-                            <p className="hyp-evidence">{h.evidence}</p>
+                            <p className="hyp-evidence"><strong>Evidence:</strong> {h.evidence}</p>
                             <EvidenceCallout source={h.source} />
                         </div>
                     ))}

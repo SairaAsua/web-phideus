@@ -24,7 +24,11 @@ const faqs = [
     },
     {
         q: 'What is d4a4?',
-        a: 'd4a4 is the champion arm from Gate 4.3. It injects two ratio descriptors simultaneously: D4 (MIDI interval features, 4d) into the MIDI encoder, and A4 (audio log-frequency deltas, 8d) into the audio encoder. Both use same-modality concatenation. The combination is superadditive: D4 alone = +3.4pp, A4 alone = +3.4pp, but d4a4 = +9.6pp.'
+        a: 'd4a4 is the champion arm from Gate 4.3. It injects two ratio descriptors simultaneously: D4 (MIDI ratio descriptor) into the MIDI encoder, and A4 (audio log-frequency deltas) into the audio encoder. Both use same-modality concatenation. The combination is superadditive: D4 alone = +3.4pp, A4 alone = +3.4pp, but d4a4 = +9.6pp.'
+    },
+    {
+        q: 'What is D4 exactly?',
+        a: 'D4 is a MIDI ratio descriptor that encodes 4 dimensions per token: relative pitch intervals (f₁/f₂), inter-onset interval (IOI) ratios, velocity deltas, and duration ratios. Unlike absolute MIDI properties, D4 focuses on the harmonic relationships between events.'
     },
     {
         q: 'What is a "gate" in BIAS_CONTROL?',
@@ -32,7 +36,11 @@ const faqs = [
     },
     {
         q: 'What does "Representation > Architecture" mean?',
-        a: 'The key lesson from Phase 2: changing the data encoding (from global histograms [256,3] to temporal histograms [T,256,3]) produced a dramatic improvement (val_loss from 4212 to 0.456), while changing the model architecture (VAE → HRM) produced little effect on the improved representation. The way you encode data matters more than the neural network you use.'
+        a: 'The key lesson from Phase 2: changing the data encoding (from global histograms to temporal ones) produced a dramatic improvement in learnability, while changing the model architecture produced little effect. This led to the "Anti-Phantom-Variable Protocol" to isolate whether improvements come from the representation or the model mechanism.'
+    },
+    {
+        q: 'What was learned from Gate 3 (DANN)?',
+        a: 'Gate 3 tested Domain Adversarial Neural Networks to force modal invariance. The result was a NO-GO: forcing the model to ignore domain differences did not improve retrieval, suggesting that modal invariance was not the main bottleneck, but rather the representation of harmonic signal itself.'
     },
     {
         q: 'Is this project related to sacred geometry or numerology?',

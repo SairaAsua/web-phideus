@@ -23,7 +23,7 @@ export default function Home() {
                     The current testbed is <strong>Audio ↔ MIDI</strong> cross-modal retrieval on MAESTRO,
                     with contrastive training (VICReg) and structured evaluation.
                 </p>
-                <EvidenceCallout source="README.md" />
+                <EvidenceCallout source="Documents/00_TRONCAL/Proyecto_Estado_Actual.md" />
             </section>
 
             <section className="status-panel card">
@@ -34,19 +34,23 @@ export default function Home() {
                         <span className="status-value">Batch 60ep at UNC (D0, d4a4, a4r, d4-a4r, moe-dual)</span>
                     </div>
                     <div className="status-item">
-                        <span className="status-label">Latest Gate</span>
+                        <span className="status-label">Latest Gate (Screening)</span>
                         <span className="status-value">
                             {currentGate?.name} — {currentGate?.title} <StatusBadge status={currentGate?.status} />
                         </span>
                     </div>
                     <div className="status-item">
-                        <span className="status-label">Best S (record)</span>
+                        <span className="status-label">Best S (Retrieval Record)</span>
                         <span className="status-value highlight">{bestResult?.s} — d4a4 scratch 30ep (+21.8pp)</span>
                     </div>
                     <div className="status-item">
                         <span className="status-label">Hypothesis H3</span>
                         <StatusBadge status="UNDER_INVESTIGATION" />
                     </div>
+                </div>
+                <div className="status-definitions">
+                    <p><small><strong>S (Retrieval Score):</strong> min(Audio2MIDI_R@10, MIDI2Audio_R@10) on a canonical pool of 256 candidates.</small></p>
+                    <p><small><strong>Gate 4.4:</strong> Major architecture screening (Third Tower, FiLM, MoE) concluded with 24 screened arms.</small></p>
                 </div>
                 <EvidenceCallout source="Documents/00_TRONCAL/Proyecto_Estado_Actual.md" />
             </section>

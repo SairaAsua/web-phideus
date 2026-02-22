@@ -19,15 +19,17 @@ pip install -r requirements.txt`}</pre>
 
             <section className="section">
                 <h2 className="section-title">Full Pipeline</h2>
-                <pre className="code-block">{`python experiments/bias_control/run_all_gates.py \\
+                <p>Run the entire BIAS_CONTROL suite (Gates 0-4.4):</p>
+                <pre className="code-block">{`python <a href="https://github.com/AlterMundi/Phideus/blob/main/experiments/bias_control/run_all_gates.py" target="_blank">experiments/bias_control/run_all_gates.py</a> \\
   --maestro-dir data/maestro_v3/maestro-v3.0.0 \\
   --output data/bias_control_medium`}</pre>
             </section>
 
             <section className="section">
                 <h2 className="section-title">Gate 4.3 (Example: arm d4a4)</h2>
+                <p>Reproduce the champion arm training:</p>
                 <pre className="code-block">{`PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \\
-python experiments/bias_control/gate42_training.py \\
+python <a href="https://github.com/AlterMundi/Phideus/blob/main/experiments/bias_control/gate42_training.py" target="_blank">experiments/bias_control/gate42_training.py</a> \\
   --descriptor d4a4 \\
   --checkpoint data/bias_control_medium/training_outputs/foundation_locked_e25.pt \\
   --output data/bias_control_medium/training_outputs/gate43/d4a4 \\
@@ -73,7 +75,9 @@ outputs/        # Evaluation outputs`}</pre>
                         <li>Report <strong>S metric</strong> for primary comparison</li>
                         <li>Use <code className="inline">foundation_locked_e25.pt</code> as starting checkpoint (MD5: ddb2ebf7, chmod 444)</li>
                         <li>Document freeze-policy and learning rate schedule</li>
-                        <li>Follow the <strong>anti-phantom-variable protocol</strong> (change only one thing at a time)</li>
+                        <li>Follow the <strong>Anti-Phantom-Variable Protocol</strong>:
+                            <p className="protocol-quote">"Isolate a single architectural or data change per experiment. If multiple variables change simultaneously, the resulting improvement is 'phantom' — its true source cannot be scientifically identified."</p>
+                        </li>
                     </ul>
                 </div>
                 <EvidenceCallout source="Documents/01_FRENTES_ACTIVOS/BIAS_CONTROL/ROADMAP_BIAS_CONTROL.md">
